@@ -1,10 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export const config = {
-    runtime: 'edge',
-};
-
+export const revalidate=0
 export function GET(request: NextRequest) {
 
     let jobList = [
@@ -111,7 +108,6 @@ export function GET(request: NextRequest) {
     ]
 
     const randomJob = jobList[Math.floor(Math.random() * jobList.length)];
-
     return NextResponse.json(
         {
             job: randomJob,
