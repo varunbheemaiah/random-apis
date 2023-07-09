@@ -113,6 +113,9 @@ export function GET(request: NextRequest) {
         },
         {
             status: 200,
+            headers: {
+                'Cache-Control': 's-maxage=1',
+            },
         },
     );
 }
