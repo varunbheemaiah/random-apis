@@ -4,7 +4,7 @@ import type { NextRequest } from 'next/server';
 export const revalidate=0
 export function GET(request: NextRequest) {
 
-    let jobList = [
+    let items = [
         "Empty their septic tank",
         "Clean their pet's waste",
         "Unclog their drains",
@@ -49,7 +49,7 @@ export function GET(request: NextRequest) {
         "Scrape their chewing gum",
         "Remove their vomit stains",
         "Unclog their kitchen sink",
-        "Dig their grave",
+        "Collect their used chewing tobacco",
         "Clean their soiled mattress",
         "Wash their dirty dishes by hand",
         "Polish their brass or silverware",
@@ -106,11 +106,9 @@ export function GET(request: NextRequest) {
         "Trim their overgrown nose hairs",
         "Collect their used colostomy bags"
     ]
-
-    const randomJob = jobList[Math.floor(Math.random() * jobList.length)];
     return NextResponse.json(
         {
-            job: randomJob,
+            body: items[Math.floor(Math.random() * items.length)],
         },
         {
             status: 200,
