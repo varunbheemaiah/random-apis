@@ -1,5 +1,10 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+
+export const config = {
+    runtime: 'edge',
+};
+
 export function GET(request: NextRequest) {
 
     let jobList = [
@@ -114,7 +119,7 @@ export function GET(request: NextRequest) {
         {
             status: 200,
             headers: {
-                'Cache-Control': 'private',
+                'Cache-Control': 'private, no-cache, s-maxage=0, max-age=0',
             },
         },
     );
